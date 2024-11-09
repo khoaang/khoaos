@@ -1,0 +1,92 @@
+.window {
+  width: 400px;
+  height: 450px;
+  background: rgba(18, 18, 23, 0.95);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  position: relative;
+}
+
+.window-titlebar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 12px 20px;
+  user-select: none;
+}
+
+.window-title {
+  color: white;
+  font-family: 'Inter', sans-serif;
+}
+
+.window-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.window-button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  opacity: 0.7;
+  cursor: pointer;
+}
+
+.close { background: #ff5f56; }
+.minimize { background: #ffbd2e; }
+.maximize { background: #27c93f; }
+
+.window-content.resume-window {
+  width: 100%;
+  height: calc(100% - 45px); /* Subtract titlebar height */
+  display: flex;
+}
+
+.window-content.resume-window .pdf-viewer {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* And modify the existing .window.resume-window */
+.window.resume-window {
+  width: 800px;
+  height: 600px;
+}
+
+.resize-handle {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 20px;
+  height: 20px;
+  cursor: nwse-resize
+}
+
+.resize-handle::after {
+  content: '';
+  position: absolute;
+  right: 6px;
+  bottom: 6px;
+  width: 8px;
+  height: 8px;
+  border-right: 2px solid rgba(255, 255, 255, 0.3);
+  border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+}
+
+.window.khoagpt-window {
+  width: 280px !important;
+  height: 340px !important;
+}
+
+.window-content.khoagpt-window {
+  height: calc(100% - 45px);
+  display: flex;
+  overflow: hidden;
+}

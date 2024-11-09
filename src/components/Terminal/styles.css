@@ -1,0 +1,159 @@
+.terminal-window {
+  width: 900px;
+  height: 600px;
+  background: rgba(18, 18, 23, 0.7);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+  backdrop-filter: blur(10px);
+  user-select: none;
+}
+
+.terminal-titlebar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.03);
+  padding: 12px 20px;
+  cursor: grab;
+}
+
+.terminal-titlebar:active {
+  cursor: grabbing;
+}
+
+.window-controls {
+  display: flex;
+  gap: 8px;
+}
+
+.window-button {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: none;
+  opacity: 0.7;
+}
+
+.close { background: #ff5f56; }
+.minimize { background: #ffbd2e; }
+.maximize { background: #27c93f; }
+
+.terminal {
+  height: calc(100% - 45px);
+  overflow-y: auto;
+  font-family: monospace;
+  font-size: 1.1em;
+  color: #fff;
+  scroll-behavior: smooth;
+  display: flex;
+  flex-direction: column;
+}
+
+.terminal-content {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  line-height: 1.4;
+  user-select: text;
+}
+
+.boot-sequence {
+  padding: 0;
+  font-family: monospace;
+  font-size: 1.1em;
+  color: #fff;
+  opacity: 0.9;
+  display: flex;
+  flex-direction: column;
+}
+
+.boot-text {
+  margin: 4px 0;
+  line-height: 1.2;
+  font-family: monospace;
+  white-space: pre;
+}
+
+.terminal-output {
+  margin-top: 12px;
+}
+
+.terminal-input-line {
+  display: flex;
+  align-items: center;
+  margin-top: 12px;
+  font-family: monospace;
+}
+
+.prompt {
+  color: #64ffda;
+  margin-right: 12px;
+  user-select: none;
+  opacity: 0.8;
+}
+
+.terminal-input {
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-family: monospace;
+  font-size: inherit;
+  flex: 1;
+  outline: none;
+}
+
+.terminal-output-line {
+  margin: 8px 0;
+  line-height: 1.6;
+}
+
+.terminal-output-command {
+  color: #64ffda;
+  opacity: 0.8;
+}
+
+.terminal-output-result {
+  color: #fff;
+  opacity: 0.9;
+  white-space: pre-wrap;
+}
+
+.terminal-cyan {
+  color: #64ffda;
+}
+
+.terminal-yellow {
+  color: #ffbd2e;
+}
+
+.terminal-gray {
+  color: #888;
+}
+
+.terminal-output-line, 
+.terminal-input-line,
+.terminal-input,
+.prompt,
+.terminal-output-command,
+.terminal-output-result {
+  font-family: monospace;
+}
+
+.terminal-output-line pre {
+    margin: 0;
+    white-space: pre-wrap;
+    font-family: inherit;
+}
+
+.terminal-output-result {
+    white-space: pre-wrap;
+    word-wrap: break-word;
+}
+
+.terminal-output pre {
+    margin: 0;
+    white-space: pre-wrap;
+}
