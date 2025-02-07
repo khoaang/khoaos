@@ -20,6 +20,12 @@ export const executeCommand = (command: string, currentDirectory: string): strin
             return COMMAND_OUTPUTS[COMMANDS.CONTACT];
         case COMMANDS.CLEAR:
             return '__CLEAR__';
+        case COMMANDS.ROBOTICS:
+            return COMMAND_OUTPUTS[COMMANDS.ROBOTICS];
+        case COMMANDS.RESEARCH:
+            return COMMAND_OUTPUTS[COMMANDS.RESEARCH];
+        case COMMANDS.COURSES:
+            return COMMAND_OUTPUTS[COMMANDS.COURSES];
         default:
             return `Command not found: ${cmd}. Type 'help' for available commands.`;
     }
