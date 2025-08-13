@@ -1,24 +1,24 @@
 export interface TerminalHistory {
-    command?: string;
-    output?: string;
+  command?: string;
+  output?: string;
 }
 
 export const COMMANDS = {
-    HELP: 'help',
-    ABOUT: 'about',
-    EDUCATION: 'education',
-    EXPERIENCE: 'experience',
-    PROJECTS: 'projects',
-    SKILLS: 'skills',
-    CONTACT: 'contact',
-    CLEAR: 'clear',
-    ROBOTICS: 'robotics',
-    RESEARCH: 'research',
-    COURSES: 'courses'
+  HELP: 'help',
+  ABOUT: 'about',
+  EDUCATION: 'education',
+  EXPERIENCE: 'experience',
+  PROJECTS: 'projects',
+  SKILLS: 'skills',
+  CONTACT: 'contact',
+  CLEAR: 'clear',
+  ROBOTICS: 'robotics',
+  RESEARCH: 'research',
+  COURSES: 'courses'
 } as const;
 
 export const COMMAND_OUTPUTS = {
-    [COMMANDS.HELP]: `
+  [COMMANDS.HELP]: `
 \x1b[96m╔══════════════════════════════════════════════════════════╗
 ║                   Available Commands                      ║
 ╚══════════════════════════════════════════════════════════╝\x1b[0m
@@ -39,118 +39,85 @@ export const COMMAND_OUTPUTS = {
   \x1b[96mclear\x1b[0m       Clear terminal screen
 
 \x1b[90mTip: All commands are case-insensitive\x1b[0m`,
-    
-    [COMMANDS.ABOUT]: `\x1b[96m👋 About Me:\x1b[0m
 
-First-gen UC Berkeley EECS student with a passion for pushing the boundaries of hardware-software integration. 
-Experienced in designing and prototyping embedded systems, optimizing machine learning models, and working 
-collaboratively on interdisciplinary projects to drive innovation and accessibility.`,
-    
-    [COMMANDS.EDUCATION]: `\x1b[96m🎓 Education:\x1b[0m
+  [COMMANDS.ABOUT]: `\x1b[96m👋 About Me:\x1b[0m
+
+UC Berkeley EECS student specializing in the intersection of AI, embedded systems, and full-stack development. Proven ability to architect and deploy scalable, cloud-native AI applications from the ground up. Passionate about leveraging software to solve complex hardware challenges.`,
+
+  [COMMANDS.EDUCATION]: `\x1b[96m🎓 Education:\x1b[0m
 
 University of California, Berkeley
 B.S. in Electrical Engineering & Computer Science
 GPA: 3.65
 Expected: May 2026`,
-    
-    [COMMANDS.EXPERIENCE]: `\x1b[96m💼 Work Experience:\x1b[0m
 
-\x1b[93mCalCentral, Berkeley IT\x1b[0m (Software Engineer - ReactJS) | Aug 2024 - Present
-• Scalable System Migration: Spearheaded Angular to React transition for 40k+ users
-• Performance Optimization: 30% reduction in platform load times
-• Implemented lazy loading and code-splitting techniques
+  [COMMANDS.EXPERIENCE]: `\x1b[96m💼 Work Experience:\x1b[0m
 
-\x1b[93mMa Lab, UC Berkeley EECS & Physics\x1b[0m (ML Engineer & Research Lead) | Aug 2023 - Present
-• Optimized transformer models for physics literature analysis (50% better clustering)
-• Built Python application for 1m+ APS Papers analysis
-• Led team to secure Google Research Scholar funding
+\x1b[93mGoogle, Platforms & Devices\x1b[0m (AI Engineer Intern — Hardware Team) | May 2024 - Present
+• Full-Stack AI System Development: Architected and built "Bishop," a full-stack AI agent to automate hardware design reviews; led from prototype to a deployed Google Cloud application in under 3 months for teams like Pixel
+• Resilient, Real-Time Architecture: Engineered a resilient, real-time architecture using Firestore and a custom async timeout/retry system for long-running AI tasks, overcoming core SDK limitations
+• Intelligent "Design Memory" System: Pioneered a system that transforms the agent from a stateless tool into an intelligent partner that learns from past reviews to improve fault detection accuracy
 
-\x1b[93mIntegem\x1b[0m (Embedded Systems Engineer Intern) | May 2024 - Aug 2024
-• Designed robotics control systems using NVIDIA Jetson Nano
-• Developed sensor interfacing circuits for real-time data
-• Created educational robotics kits for 2,000+ students
-• Cross-functional collaboration with engineers and educators`,
-    
-    [COMMANDS.PROJECTS]: `\x1b[96m🚀 Projects:\x1b[0m
+\x1b[93mCalCentral, Berkeley IT\x1b[0m (Frontend Software Engineer) | Aug 2024 - Present
+• Large-Scale System Migration: Leading migration of a legacy Angular app to a modern React stack for 40,000+ users; engineered a new component architecture to improve developer velocity and maintainability
+• Web Performance Optimization: Cut initial page load times by 30% via code-splitting and lazy loading
+
+\x1b[93mMa Lab, UC Berkeley EECS & Physics Dept.\x1b[0m (Machine Learning Engineer & Research Team Lead) | Aug 2023 - Present
+• Scientific AI Transformer Optimization: Improved scientific literature clustering accuracy by 50% by fine-tuning PyTorch Transformer models for large-scale semantic analysis
+• Scalable Data Processing Pipeline: Built a scalable Python pipeline to process and analyze 1M+ multimodal physics papers, automating a previously manual research workflow
+• Research Leadership & Funding: Led a student team to secure a Google Research Scholar grant, driving the project vision and development of novel AI tools for high-impact physics research`,
+
+  [COMMANDS.PROJECTS]: `\x1b[96m🚀 Projects:\x1b[0m
 
 • \x1b[93mSciRev.AI\x1b[0m
-  - AI platform for scientific proposal review
-  - Utilizes transformers for semantic insights
-  - Extracts structured information from unstructured formats
+  - AI platform for scientific proposal review; used transformers to extract structured data from unstructured text
 
 • \x1b[93mRoboPath\x1b[0m
-  - Autonomous robotic system using Jetson Nano
-  - Implements object detection capabilities
+  - Autonomous navigation robot (Jetson Nano) using YOLO for real-time object detection and pathfinding
 
 • \x1b[93mAUDIOVSL\x1b[0m
-  - Multimedia conversion web app
-  - Integrates advanced signal processing
-  - Intuitive user interface design
+  - Full-stack web app for multimedia conversion, integrating advanced DSP algorithms with an intuitive UI
 
 • \x1b[93mIoT DoorLock Toolkit\x1b[0m
-  - Open source Raspberry Pi-based smart home system
-  - Remote control capabilities`,
-    
-    [COMMANDS.SKILLS]: `\x1b[96m🛠️ Technical Skills:\x1b[0m
+  - Open-source Raspberry Pi smart lock with a secure, remote-access mobile web interface`,
 
-\x1b[93mCore Technologies:\x1b[0m
-• Embedded Systems
-• Control Theory
-• Machine Learning (Transformers, GNNs)
-• FPGA Development
-• Signal Processing
-• Hardware Prototyping
+  [COMMANDS.SKILLS]: `\x1b[96m🛠️ Technical Skills:\x1b[0m
 
-\x1b[93mProgramming:\x1b[0m
-• Python
-• C/C++
+\x1b[93mLanguages:\x1b[0m
+• Python, C/C++, JavaScript/TypeScript, SQL, LaTeX, HTML/CSS
 
-\x1b[93mTools & Platforms:\x1b[0m
-• PyTorch
-• TensorFlow
-• KiCAD
-• Jetson Nano
-• Heroku
-• AWS
-• Docker
+\x1b[93mAI/ML:\x1b[0m
+• PyTorch, TensorFlow, Transformers, Scikit-learn, Pandas, NumPy, OpenCV
 
-\x1b[93mSoft Skills:\x1b[0m
-• Leadership
-• Interdisciplinary collaboration
-• Adaptability
-• Creative problem-solving`,
-    
-    [COMMANDS.CONTACT]: `\x1b[96m📫 Contact Information:\x1b[0m
+\x1b[93mDev Tools & Cloud:\x1b[0m
+• Git, Docker, GCP (App Engine, Firestore, Vertex AI), AWS, Heroku, FastAPI, React, Node.js
+
+\x1b[93mHardware & EE:\x1b[0m
+• Embedded Systems (Raspberry Pi, Jetson Nano), FPGA, KiCAD, Digital Logic, Control Theory`,
+
+  [COMMANDS.CONTACT]: `\x1b[96m📫 Contact Information:\x1b[0m
 
 • Email: khoan@berkeley.edu
 • Website: www.kh0a.com
 • Mobile: +1(408)406-8665`,
-    
-    [COMMANDS.ROBOTICS]: `\x1b[96m🤖 Robotics Experience:\x1b[0m
 
-\x1b[93mRoboPath Project:\x1b[0m
-• Autonomous navigation system using Jetson Nano
-• Real-time object detection implementation
-• Sensor integration and control systems
+  [COMMANDS.ROBOTICS]: `\x1b[96m🤖 Robotics:\x1b[0m
 
-\x1b[93mIntegem Robotics Work:\x1b[0m
-• Designed robotics control systems
-• Implemented hardware-software integration
-• Created educational robotics kits
-• Developed sensor interfacing circuits`,
-    
-    [COMMANDS.RESEARCH]: `\x1b[96m🔬 Research Experience:\x1b[0m
+\x1b[93mRoboPath:\x1b[0m
+• Autonomous navigation robot on Jetson Nano
+• YOLO-based real-time object detection and path planning
+• Sensor integration and control systems`,
 
-\x1b[93mMa Lab, UC Berkeley EECS & Physics Department:\x1b[0m
-• Project: physmap.org
-• Role: Machine Learning Engineer & Research Team Lead
-• Focus: AI-Driven Research Tools
+  [COMMANDS.RESEARCH]: `\x1b[96m🔬 Research Experience:\x1b[0m
 
-Key Achievements:
-• Optimized transformer-based models for physics literature analysis
-• 50% improvement in clustering accuracy
-• Engineered Python-based application for 1m+ APS Papers
-• Secured Google Research Scholar funding
-• Led cross-functional team of interns`
+\x1b[93mMa Lab, UC Berkeley EECS & Physics Dept.:\x1b[0m
+• Role: Machine Learning Engineer & Research Team Lead (Aug 2023 - Present)
+• Optimized transformer models for large-scale scientific literature analysis (50% clustering improvement)
+• Built scalable Python pipelines for 1M+ multimodal physics papers
+• Led a student team to secure a Google Research Scholar grant`,
+
+  [COMMANDS.COURSES]: `\x1b[96m📚 Selected Coursework:\x1b[0m
+
+Coming soon. Highlights include data structures, computer architecture, linear algebra, and probability.`
 
 } as const; 

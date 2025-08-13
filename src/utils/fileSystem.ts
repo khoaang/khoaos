@@ -15,7 +15,7 @@ export const fileSystem: FileSystem = {
             },
             'about.md': {
                 type: 'file',
-                content: '# About Me\n\nI am a software developer...'
+                content: '# About Me\n\nUC Berkeley EECS student specializing in the intersection of AI, embedded systems, and full-stack development.\\n\\nI architect and deploy scalable, cloud-native AI applications and love leveraging software to solve complex hardware challenges.'
             }
         }
     }
